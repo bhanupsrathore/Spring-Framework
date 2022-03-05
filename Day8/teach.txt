@@ -1,0 +1,109 @@
+convention over configuration
+
+
+Indicates a configuration class that declares one or more @Bean methods and also triggers auto-configuration and component scanning. This is a convenience annotation that is equivalent to declaring @Configuration, @EnableAutoConfiguration and @ComponentScan.
+
+
+   DispatcherServletAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.web.servlet.DispatcherServlet' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+
+  
+
+DataSourceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass   jaxvax.sql.DatSource
+
+
+
+   DataSourceAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource'
+
+
+
+
+
+
+
+   HibernateJpaAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.persistence.EntityManager' (OnClassCondition)
+
+
+
+
+Psovite matches
+nesgative matches
+
+exclusion
+
+
+
+FAT jar
+
+spring-boot-maven-plugin:2.6.3:repackage (repackage) @ springbootwebtest
+
+
+
+
+
+
+@ConfigurationProperties(prefix = "spring.datasource")
+
+
+
+
+
+spring.datasource.driverClassName=
+spring.datasource.url
+spring.datasource.username
+spring.datasource.passsword
+
+
+-Ddebug=true
+
+
+
+
+
+HIkari
+tomcat
+dbcp2
+
+
+actuator module -> check health of your application.
+
+
+
+
+select employee0_.id as id1_0_, employee0_.designation as designation2_0_, employee0_.email_id as email_id3_0_, employee0_.name as name4_0_ from employeetbl employee0_
+
+
+
+emailId -> email_ID  (snake casing)
+
+
+
+
+
+
+profiles in spring boot
+
+
+
+SIT (System Integration Test)
+
+UAT (User Acceptance Test)
+
+Production 
+
+
+
+
+
+
+
+
+
+
+

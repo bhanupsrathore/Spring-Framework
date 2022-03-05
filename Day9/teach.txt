@@ -1,0 +1,19 @@
+OAUTH
+FORM
+SAML (SSO )  -> Single signin and Signout
+
+
+
+
+google.com
+gmail.com			-> user and password
+
+youtube				
+googledrive			
+
+
+
+JDBC Template -> SQL Queries
+REST Template -> Calling REST Services.
+
+

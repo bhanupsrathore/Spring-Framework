@@ -1,0 +1,38 @@
+it is a automation build tool. 
+Maven help in buildig your procject and doumentation of project.
+
+
+
+Maven depends on pom.xml file. This file has inf about how to build your project.
+
+Maven has 3 lifecycel
+
+default (build)
+clean
+site
+
+1) The default lifecycle handles your project deployment, 
+2) The clean lifecycle handles project cleaning, 
+3) while the site lifecycle handles the creation of your project's web site or documentation.
+
+
+Each lifecycle has multiple phases
+
+
+https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
+
+
+
+Maven uses a standard directory layout and a default build lifecycle.
+
+
+
+
+A settings.xml file is usually found in a couple of places:
+
+Global settings in Mavens home directory: ${maven.home}/conf/settings.xml
+User settings in the user’s home: ${user.home}/.m2/settings.xml
+If both files exist, their contents are merged. Configurations from the user settings take precedence.
+
+
+

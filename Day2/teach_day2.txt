@@ -1,0 +1,279 @@
+
+
+xml
+Annotation
+Java config
+
+
+
+xyz x = new XYZ();
+
+
+
+Workshop project
+
+
+
+TrainingWorkshop
+
+
+
+	TrainingComapny
+
+
+		Trainer
+
+
+			
+
+		
+
+interface Workshop{
+
+	
+	public void conductWorkshop();
+
+}
+
+
+class TrainingWorkshop implements Workshop{
+
+	private TrainingComapny trainingCompany;
+
+	
+	public void conductWorkshop(){
+
+		
+	}
+
+}
+
+
+interface TrainingComapny{
+	
+	public void conductTraining();
+
+}
+
+
+
+class METSOlutions implements TrainingComapny{
+
+
+	private Trainer trainer;
+
+	public void conductTraining(){
+		
+	}
+}
+
+
+
+interface Trainer{
+	
+	public void train();
+
+}
+
+
+
+class JavaTrainer implements Trainer{
+	
+	public void train(){
+		
+	}
+
+}
+
+
+
+
+Resource leak: 'context' is never closed
+
+The resource type ApplicationContext does not implement java.lang.AutoCloseable
+
+
+
+
+
+
+Object org.springframework.context.support.AbstractApplicationContext.getBean(String name) throws BeansException
+
+
+
+
+
+
+public class METSolutions implements TrainingCompany{
+
+	private Trainer trainer;
+
+
+
+
+
+class METSolutions
+
+	find how many instance variables are there
+
+
+	private Trainer trainer;
+
+
+Trainer
+whether Trainer is a class or interface		-> interface
+
+
+find a class implemeting Trainer  		-> JavaTrainer class
+
+find SpringBean of JavaTrainer class    	-> javaTrainer2
+
+
+
+
+
+
+private TrainingCompany trainingCompany;
+
+
+
+TrainingCompany  -> interface
+
+
+METSOLutions
+
+
+
+
+
+
+	
+There are 2 constructors
+
+TrainingCompany trainingCompany
+
+
+TrainingCompany -> interface
+METSOlutions
+metSolutions
+
+
+
+
+
+
+Trainer trainer
+
+JavaTrainer
+javaTrainer2
+
+
+
+
+
+
+	private Trainer trainer;
+
+
+trainer;			any spring bean with id="trainer"
+
+
+
+
+
+
+class ABC{
+
+	private Address address;			//bea id="address"
+
+	@Autowired
+	private EDeplart dept;				//<bean id="dept"	
+
+	
+	
+
+	//During object creation
+	@Autowired
+	public Abc(Address address){
+
+		
+	}
+
+
+	//If these dept is not madtory in ABC
+
+	@Autowired
+	public void setDept(Dept dept){
+		if(omether is != null)
+			this.dept =dept;
+	}
+
+
+	ABC abc = new ABC(address spring bean);			//constructor autowrid  or injection
+
+	abc.deppt = 						//Property/instance variable aut wired  or injection
+
+	abc.setDept(dept spring bean);				//Setter based autowired or injection
+
+	
+
+	
+
+
+}
+
+
+<bean id="pqr" class="com.met.model.PQR" autowire="constructor" />
+
+class PQR{
+
+	
+	private Connection connect;
+
+
+	PQR(Connection con){
+		this.connect = con;
+	}
+
+
+	public void saveDate(){
+
+		con.createStatement()';
+	}
+
+}
+
+
+
+
+
+private Trainer trainer;
+
+
+Trainer
+-> Interface
+
+
+-> JavaTrainer
+
+javaTrainer1
+javaTrainer2
+
+
+
+
+ClassPathXMLApplicationCOntext
+
+
+
+
+
+
+
+
+
+
+
+
+
+

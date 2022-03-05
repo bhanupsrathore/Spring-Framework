@@ -1,0 +1,247 @@
+model : data that we need to dispalay on UI.
+view : JSP, html
+controller : servlet
+
+
+
+LoginPage
+
+LoginServlet
+1) Accept user parameters :  GET/POST/PUT/DELETE
+	
+	String userId = request.getParamater("userName");
+	String password = request.getParameter("pwd");
+
+
+2) invoke business logic
+	LoginBean bean = new LoginBean(uderid, password);
+
+	boolean valid = bean.authenticate();
+
+
+3) Based on result of model bean we do redirection.	
+
+	if(valid)
+		response.sendRedirect("order.jps");
+	
+	ellse{
+			response.sendRedirect("login.jsp");
+	}
+
+
+
+
+
+Order.jsp
+
+OrderServlet
+
+1) accept user parmaetsr
+
+	qty, pno
+
+2) call model class called 
+
+	OrderBean bean = new OrderBean("all param");
+
+	long ordNo = bean.placeOrder();
+
+
+3) redirection
+	if(ordNo > 0){
+
+	diplay to user
+
+	else{
+
+		redirect to error page
+
+
+
+
+SpringMVC says you should have 1 webServlet in your application.
+DispatcherServlet -> this is provided by SpringMVC web framework.
+
+
+we need to configure this 
+DispatcherServlet in web.xml file.
+
+
+
+  <servlet>
+  	<servlet-name>mvcServlet</servlet-name>
+  	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>mvcServlet</servlet-name>
+  	<url-pattern>/mvcweb/*</url-pattern>
+  </servlet-mapping>
+
+
+
+
+
+
+  http://localhost:8055/SpringWebMVC/mvcweb/hello
+
+  http://localhost:8085/SpringWebMVC/mvcweb/account
+
+
+  http://localhost:8085/SpringWebMVC/mvc/account		404
+
+
+
+
+
+
+hashmap
+
+key -> /hello
+valeu -> HelloCOntroller Spring bean
+
+
+
+
+	
+  @Component
+  @RequestMapping("/hello")
+  class HelloController{
+
+
+	public ModelAndView welcome(){
+
+		
+		ModelAndView mv = new ModelAndView();
+
+		model -> data that wwe need to show to user
+
+		view -> where we need to display/render this data
+
+			//view is not actual jsp/html page (it's just an english name)   hello, account
+
+			//we need to convert view's english name to jsp page.  (ViewResolver )
+ 
+
+		return mv;
+
+	}
+
+  }
+
+	
+
+  handler Mapper it looks for a class/ Spring bean which has annotated @RequestMapping("/hello")
+
+
+
+
+  http://localhost:8085/SpringWebMVC/mvcweb/employee
+
+
+  @RequestMapping("/employee")
+  class EmployeeController{
+
+	
+	
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+  init(){
+
+	ApplicationCOntext context = new XMLWebApplicationContext("/WEB-INF/<%servlet-name%>-servlet.xml");
+	
+  }
+
+
+
+
+
+  service();
+
+
+
+   destroy(){
+
+
+    }
+
+
+
+
+
+
+
+/WEB-INF/mvcServlet-servlet.xml
+
+/WEB-INF/<%servlet-name%>-servlet.xml
+
+mvcServlet-servlet.xml
+
+
+
+
+
+/WEB-INF/pages/hello.jsp
+
+
+
+
+FOrm is a 2 step process
+1) Load the form		-> give me  a blank/defalt employee object to JSP.
+
+
+2) submit the form		-> Spring MVC will give you the populated object
+
+
+
+
+int id = Integer.parseInt(request.getParameter("id"));
+String name = request.getParameter("name")
+String designation = request.getParameter("name");
+String emailId = request.getParameter("emailId");
+
+
+Employee employee = new Employee(id, name, designation, emailId);
+
+saveEmployee(employee);
+
+
+
+
+
+
+
+/WEB-INF/pages/emp.jsp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

@@ -1,0 +1,256 @@
+
+Aspect oriented programming (AOP)
+
+
+
+1) duplication of code (code is duplicated accross multiple files) -> Boilerplate code
+		code which is duplicated accross multiple files and its is not related to business logic is called Boilder plate code.
+
+ 2) Most of time developer spends time in setting up boiler plate code instead of focusing on business logic.
+		-> cuts business logic
+
+
+	
+
+Aspect -> Create a single class and put boilder plate code here
+	modularization of cross cutting concerns.
+
+
+
+JointPoint  -> conductWorkhsop, conductTraining, train  (all the methods executing in your application)	-> Hotel Menu card
+
+PointCUt -> method where we need to solve boiler plate code (train method)		-> dishes we order
+
+
+Advise    -> Code which should be executed before bbusiness logic, 
+					   after business logic
+
+
+
+
+
+try(Connection con = dataSource.getConnection();
+
+				PreparedStatement pstmt = con.prepareStatement("insert into EmployeeTbl values(?,?,?,?)")
+				@Before
+				
+				){		
+			
+			pstmt.setInt(1, employee.getId());
+			pstmt.setString(2, employee.getName());
+			pstmt.setString(3, employee.getDesignation());			//100   // 20
+			pstmt.setString(4, employee.getEmailId());
+			
+			
+			pstmt.executeUpdate();							//Business logicc 
+			
+			con.commit();			
+			
+			
+		}catch (SQLException e) {		
+			e.printStackTrace();
+			//rollbakc tx
+		}finally{
+		
+										
+		
+		}
+
+
+
+//infratu
+
+
+
+
+
+@Transactional  -> AOP work done spring for tx management
+
+
+
+try(Connection con = dataSource.getConnection();
+
+				PreparedStatement pstmt = con.prepareStatement("insert into AccountTbl values(?,?,?,?)")
+				@Before
+				
+				){		
+			
+			pstmt.setInt(1, employee.getId());
+			pstmt.setString(2, employee.getName());
+			pstmt.setString(3, employee.getDesignation());			//@Before
+			pstmt.setString(4, employee.getEmailId());
+			
+			
+			pstmt.executeUpdate();							//Business logicc 
+			
+			con.commit();							//@AfterReturning	
+			
+			
+		}catch (SQLException e) {		
+			e.printStackTrace();						//@AfterThrowing
+			//rollbakc tx
+		}finally{
+											//@After
+										
+		
+		}
+
+
+
+
+created proxyclass
+merge Businesslogic code and aspect code
+
+
+
+JDKProxy   -> implements Interface
+
+
+
+
+
+class Proxy implements Trainer{
+
+	
+	JavaTrainer trainer;
+
+	@Overrid
+	public void train(){
+
+		System.out.println("Participants are taking seats");
+		System.out.println("Participants are switching off mobile phones");
+
+		trainer.train();
+
+		System.out.println("Training completed successfully");		
+
+	
+
+	}
+	
+
+}
+
+
+
+class Proxy implements Trainer{
+
+	
+	DotNetTrainer trainer;
+
+	@Overrid
+	public void train(){
+
+		System.out.println("Participants are taking seats");
+		System.out.println("Participants are switching off mobile phones");
+
+		trainer.train();
+
+		System.out.println("Training completed successfully");		
+
+	
+	}
+	
+
+}
+
+
+//@Around annotation proxy
+
+
+class Proxy implements Trainer{
+
+	
+	JavaTrainer trainer;
+
+	@Overrid
+	public void train(){
+
+		try{
+			System.out.println("Participants are taking seats");						//Before
+			System.out.println("Participants are switching off mobile phones");
+			
+			//invoke bussiness logic here 
+			//pjp.proceed();		
+
+			trainer.train();
+			
+			System.out.println("Training completed successfully");						//AfterRetrning
+			
+		}catch(Throwable ex){
+			System.out.println("Training was failure");									//@AfterThrowing
+			
+		}finally{
+			System.out.println("Training was completed");								//@After
+		}	
+
+	
+
+	}
+	
+
+}
+
+
+
+
+
+
+if calss doesnot implement interface, spring creates proxy calss using CGLIB.
+
+
+CGLIBProxy
+
+class CGLIBProxy extends JavaDotNetTrainer{
+
+	
+	@Override
+	public void train() {
+
+		try{
+			System.out.println("Participants are taking seats");						//Before
+			System.out.println("Participants are switching off mobile phones");
+			
+			//invoke bussiness logic here 
+			//pjp.proceed();		
+
+			super.train();
+			
+			System.out.println("Training completed successfully");						//AfterRetrning
+			
+		}catch(Throwable ex){
+			System.out.println("Training was failure");									//@AfterThrowing
+			
+		}finally{
+			System.out.println("Training was completed");								//@After
+		}		
+
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

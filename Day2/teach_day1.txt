@@ -1,0 +1,223 @@
+Rod Johnson  2004
+
+
+
+We will put employee creation logic in some configuration file 
+	XML
+	Annotation
+	Java Configuration
+
+
+
+XML -> configuration
+
+test.xml	
+	
+
+
+someone to read that xml file anc create java objects for us
+
+someone -> spring continaer/ IOC container
+
+
+
+In Spring Framework
+SC represents an interface called as ApplicationCOntext.
+
+from where i should read the xml file
+
+
+1) ClassPathXMLApplicationContext		-> read an xml file from classpath and create application context (Spring container)		
+2) FileSystemXMLApplicationCOntext		-> read an xml file from File systen (c:\\config/test.xml, d:\\) and create application context (Spring container)		
+3) XMLWebApplicationCOntext			-> WEB application
+
+
+
+
+
+servlet   :  3rd aprty application ie.e web container like tomcat
+EJB       :   3rd aprty application ie application server
+
+
+Spring -> Spring container is interface called as ApplicationCOntext.
+
+
+
+
+1) core
+2) beans
+3) expression
+4) context
+
+features of Spring
+
+Spring is known as light weight framework.
+
+Spring is minimal invase -> it will not force developer to implement interface, extends class
+
+
+
+
+
+Servlet:   extends HTTPServlet
+	   @Web Servlet
+
+
+HIbernate:  @Entity
+
+
+
+
+
+
+Employee   com.met.model.Employee#1 =  new EMployee();
+
+
+Employee   com.met.model.Employee#2 =  new EMployee();
+
+
+
+Employee   employee1 =  new EMployee();
+
+
+
+
+
+
+
+
+Scope of Spring bean
+1) singleton  -> for a bean id   
+2) prototype
+
+
+
+
+Default employee object created with id: 1
+Default employee object created with id: 2
+Default employee object created with id: 3
+*************Post initialization*********************
+
+
+
+
+
+
+Default employee object created with id: 1
+Default employee object created with id: 2
+*************Post initialization*********************
+
+
+
+
+
+
+Employee employee1 = new Employee();
+Employee employee2 = new Employee();
+
+
+Employee employee3 = new Employee();
+Employee employee3 = new Employee();
+
+Employee employee4 = new Employee();
+
+
+
+//Employee employee5 = new EMployee("John", 21);
+
+String name = "JOhn";
+int age = 21;
+Employee employee5 = new EMployee(name, age);
+
+
+
+
+
+
+
+
+SC is writing java cod for us
+
+
+
+
+
+constructor
+proerty 
+
+
+
+EMployee employee7 = new Employee();
+
+employee7.setname("Jill");
+employee7.setAge(22);
+employee7.setDesignation("SSE");
+
+
+
+
+EMployee employee8 = new Employee("Jack", 25);
+
+employee7.setDesignation("Director");
+employee7.setSalary("100000");
+
+
+
+
+Address address1 = new Addresss("London", Europe);
+
+
+
+Employee employee9 = new Employee("Jim", 25, SSE, 75000, address1);
+
+
+
+
+
+
+Inversion of control   (IOC)   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

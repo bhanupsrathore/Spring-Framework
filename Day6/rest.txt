@@ -1,0 +1,41 @@
+
+REST
+
+
+REspresnt State Transfer.
+
+
+Transferring state of object in some represnattion is REST
+
+
+Front COntroller design pattern:
+	Single servlet (handler class) accepts all the input request for your application.
+
+
+
+
+http://localhost:8055/SpringWebMVC/mvcweb/hello/		-> Web app
+
+
+
+http://localhost:8055/SpringWebMVC/rest/hello/	
+
+
+
+JAXB  -> Java to XML
+
+XML to JAVA conversion
+
+
+comes with jdk 1.4 to 1.10  
+
+jdk 10	 + 
+
+
+jackson
+
+JvaObject - > json string
+
+jsonString to java Object
+
+

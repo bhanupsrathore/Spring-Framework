@@ -1,0 +1,73 @@
+web.xml -> entry for DisptcherServlet
+url-pattern  ->''
+
+servletname-servlet.xml filec created to load beans
+
+@Context:COmponentScan
+
+
+configuration
+
+
+
+
+I follow COnvention over configuration
+
+Sping boot does automatic configuration of Dispatcher servlet
+
+AUtoConfiguration
+
+
+
+ DispatcherServletAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.web.servlet.DispatcherServlet' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+
+
+
+
+
+google
+Spring boot initializer
+
+
+ DataSourceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+
+
+  HibernateJpaAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.persistence.EntityManager' (OnClassCondition)
+
+
+
+
+com.met.iit.springbootwebtest
+
+	com.met.iit.springbootwebtest.controller
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
